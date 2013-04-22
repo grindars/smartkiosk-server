@@ -1,4 +1,4 @@
-ActiveAdmin.register Agent do
+SlashAdmin.register Agent do
 
   menu :parent   => I18n.t('activerecord.models.terminal.other'),
        :if       => proc { can? :index, Agent }

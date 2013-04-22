@@ -1,4 +1,4 @@
-ActiveAdmin.register ReportTemplate do
+SlashAdmin.register ReportTemplate do
 
   menu :parent   => I18n.t('activerecord.models.report.other'), 
        :label    => I18n.t('activerecord.models.report_template.other'),

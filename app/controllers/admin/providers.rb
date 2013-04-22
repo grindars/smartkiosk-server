@@ -1,4 +1,4 @@
-ActiveAdmin.register Provider do
+SlashAdmin.register Provider do
 
   menu :parent   => I18n.t('activerecord.models.provider.other'), 
        :label    => I18n.t('smartkiosk.admin.menu.manage'), 

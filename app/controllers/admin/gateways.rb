@@ -1,4 +1,4 @@
-ActiveAdmin.register Gateway do
+SlashAdmin.register Gateway do
   actions :index, :show, :edit, :update
 
   menu :parent   => I18n.t('activerecord.models.gateway.other'), 

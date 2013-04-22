@@ -1,4 +1,4 @@
-ActiveAdmin.register Collection do
+SlashAdmin.register Collection do
   config.batch_actions = false
   actions :index, :show
 

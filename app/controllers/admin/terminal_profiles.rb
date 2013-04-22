@@ -1,4 +1,4 @@
-ActiveAdmin.register TerminalProfile do
+SlashAdmin.register TerminalProfile do
 
   menu :parent   => I18n.t('activerecord.models.terminal.other'),
        :priority => 2,

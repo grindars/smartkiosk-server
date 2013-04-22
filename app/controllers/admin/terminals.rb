@@ -1,4 +1,4 @@
-ActiveAdmin.register Terminal do
+SlashAdmin.register Terminal do
 
   SIMPLE_ORDERS = Terminal::ORDERS.select{|x| x != 'upgrade'} unless defined?(SIMPLE_ORDERS)
 

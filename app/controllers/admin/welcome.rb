@@ -1,3 +1,4 @@
+=begin
 ActiveAdmin.register_page "Dashboard" do
   menu :label => I18n.t('active_admin.dashboard')
 
@@ -62,3 +63,4 @@ ActiveAdmin.register_page "Dashboard" do
     end
   end
 end
+=end

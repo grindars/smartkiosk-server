@@ -1,20 +1,10 @@
 GIT
-  remote: git://github.com/gregbell/active_admin.git
-  revision: 4e291e385bdcaa9fee2c37d5a344975101d6f15f
-  ref: 4e291e385bdcaa9fee2c37d5a344975101d6f15f
+  remote: git://github.com/plataformatec/show_for.git
+  revision: 46f9a5d84c4e3ab4cd0765c0f31b5e0976afbfa3
   specs:
-    activeadmin (0.5.1)
-      arbre (>= 1.0.1)
-      bourbon (>= 1.0.0)
-      devise (>= 1.1.2)
-      fastercsv
-      formtastic (>= 2.0.0)
-      inherited_resources (>= 1.3.1)
-      jquery-rails (>= 1.0.0)
-      kaminari (>= 0.13.0)
-      meta_search (>= 0.9.2)
-      rails (>= 3.0.0)
-      sass (>= 3.1.0)
+    show_for (0.2.5)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
 
 GIT
   remote: https://github.com/guard/guard-spork.git
@@ -24,6 +14,20 @@ GIT
       childprocess (>= 0.2.3)
       guard (>= 1.1)
       spork (>= 0.8.4)
+
+PATH
+  remote: ../slashadmin
+  specs:
+    slashadmin (0.0.1)
+      arbre
+      batch_actions
+      bootstrap-sass (~> 2.3.1.0)
+      haml
+      i18n
+      kaminari
+      rails (>= 3)
+      ransack
+      sass-rails
 
 GEM
   remote: http://rubygems.org/
@@ -44,10 +48,6 @@ GEM
     active_attr (0.7.0)
       activemodel (>= 3.0.2, < 4.1)
       activesupport (>= 3.0.2, < 4.1)
-    activeadmin-cancan (0.1.4)
-      activeadmin (>= 0.4.0)
-      cancan (>= 1.6.2)
-      rails (>= 3.0)
     activemodel (3.2.12)
       activesupport (= 3.2.12)
       builder (~> 3.0.0)
@@ -79,15 +79,15 @@ GEM
       htmlentities (~> 4.3.1)
       nokogiri (>= 1.4.1)
       rubyzip (>= 0.9.5)
+    batch_actions (0.0.1)
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-java)
     better_errors (0.3.2)
       coderay (>= 1.0.0)
       erubis (>= 2.7.0)
+    bootstrap-sass (2.3.1.0)
+      sass (~> 3.2)
     bouncy-castle-java (1.5.0146.1)
-    bourbon (3.1.0)
-      sass (>= 3.2.0)
-      thor
     builder (3.0.4)
     cancan (1.6.8)
     capistrano (2.14.1)
@@ -143,12 +143,9 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     facter (1.6.17)
-    fastercsv (1.5.5)
     ffaker (1.15.0)
     ffi (1.2.1)
     ffi (1.2.1-java)
-    formtastic (2.2.1)
-      actionpack (>= 3.0)
     gpgme-ffi (3.0.6)
       ffi (~> 1.2.0)
     guard (1.6.1)
@@ -162,7 +159,6 @@ GEM
     gyoku (1.0.0)
       builder (>= 2.1.2)
     haml (3.1.7)
-    has_scope (0.5.1)
     highline (1.6.15)
     hike (1.2.1)
     htmlentities (4.3.1)
@@ -170,9 +166,6 @@ GEM
       rack
     i18n (0.6.4)
     i18n_yaml_sorter (0.2.0)
-    inherited_resources (1.3.1)
-      has_scope (~> 0.5.0)
-      responders (~> 0.6)
     iso8583 (0.1.4)
     iso8583-mkb (0.0.3)
       eventmachine
@@ -200,11 +193,6 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     matrioshka (0.1.3)
-    meta_search (1.1.3)
-      actionpack (~> 3.1)
-      activerecord (~> 3.1)
-      activesupport (~> 3.1)
-      polyamorous (~> 0.5.0)
     method_source (0.8.1)
     mime-types (1.21)
     money (5.1.0)
@@ -272,6 +260,10 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
+    ransack (0.7.2)
+      actionpack (~> 3.0)
+      activerecord (~> 3.0)
+      polyamorous (~> 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
     redis (3.0.2)
@@ -282,8 +274,6 @@ GEM
     redis-objects-rmap (0.1.1)
       activesupport
       redis-objects
-    responders (0.9.3)
-      railties (~> 3.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rmagick (2.13.2)
@@ -329,6 +319,9 @@ GEM
       multi_json (~> 1)
       redis (~> 3)
       redis-namespace
+    simple_form (2.1.0)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     sinatra (1.3.3)
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
@@ -349,6 +342,8 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
     stateflow (0.4.2)
+    tablette (0.1.1)
+      activesupport (>= 3)
     temple (0.5.5)
     thin (1.5.0)
       daemons (>= 1.0.9)
@@ -383,13 +378,12 @@ PLATFORMS
 
 DEPENDENCIES
   active_attr
-  activeadmin (= 0.5.1)!
-  activeadmin-cancan
   activerecord-jdbcpostgresql-adapter
   activerecord-jdbcsqlite3-adapter
   axlsx
   better_errors
   bundler (~> 1.3)
+  cancan
   capistrano
   carrierwave
   clockwork
@@ -397,6 +391,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner
   dav4rack (= 0.2.11)
+  devise
   ffaker
   guard-rspec
   guard-spork!
@@ -405,10 +400,10 @@ DEPENDENCIES
   iso8583-mkb (= 0.0.3)
   jquery-rails
   jruby-openssl
+  kaminari
   liquid
   machinist
   matrioshka
-  meta_search (>= 1.1.0)
   money
   paper_trail
   payzilla (= 0.0.4)
@@ -424,12 +419,16 @@ DEPENDENCIES
   rubyzip
   russian (~> 0.6.0)
   sass-rails (~> 3.2.3)
+  show_for!
   sidekiq
+  simple_form
   sinatra
+  slashadmin!
   slim
   spork-rails
   sqlite3
   stateflow
+  tablette
   thin
   trinidad
   uglifier (>= 1.0.3)

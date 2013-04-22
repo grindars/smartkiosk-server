@@ -32,8 +32,8 @@ class Provider < ActiveRecord::Base
   accepts_nested_attributes_for :provider_gateways, :allow_destroy => true
   accepts_nested_attributes_for :provider_fields, :allow_destroy => true
 
-  scope :gateway_ids_eq, lambda{|x| includes(:gateways).where(:gateways => {:id => x})}
-  search_method :gateway_ids_eq
+  #scope :gateway_ids_eq, lambda{|x| includes(:gateways).where(:gateways => {:id => x})}
+  #search_method :gateway_ids_eq
 
   scope :after, lambda{|x|
     x.blank? ? scoped

@@ -1,12 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.class.routes.draw do
-  ActiveAdmin.routes(self)
+  mount SlashAdmin::Engine => "/admin"
 
   root :to => 'welcome#index'
 
-  devise_for :users, ActiveAdmin::Devise.config
-
+  devise_for :users
+  
   constraints lambda { |request|
     request.env["warden"].authenticate? and request.env['warden'].user.root?
   } do

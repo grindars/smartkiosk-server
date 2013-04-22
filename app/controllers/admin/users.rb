@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+SlashAdmin.register User do
 
   menu :parent   => I18n.t('activerecord.models.user.other'), 
        :label    => I18n.t('smartkiosk.admin.menu.manage'), 

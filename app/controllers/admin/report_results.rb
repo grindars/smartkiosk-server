@@ -1,4 +1,4 @@
-ActiveAdmin.register ReportResult do
+SlashAdmin.register ReportResult do
   actions :show
 
   menu false

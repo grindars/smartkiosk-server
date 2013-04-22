@@ -1,7 +1,6 @@
-ActiveAdmin.register Commission do
-
+SlashAdmin.register Limit do
   menu :parent => I18n.t('activerecord.models.provider.other'),
-       :if     => proc { can? :index, Commission }
+       :if     => proc { can? :index, Limit }
 
   #
   # INDEX
@@ -39,15 +38,13 @@ ActiveAdmin.register Commission do
       row :updated_at
     end
 
-    panel I18n.t('activerecord.models.commission_section.other') do
-      table_for(commission.commission_sections, :i18n => CommissionSection) do |t|
+    panel I18n.t('activerecord.models.limit_section.other') do
+      table_for(limit.limit_sections, :i18n => LimitSection) do |t|
         t.column :agent
         t.column :terminal_profile
         t.column :payment_type
         t.column :min
         t.column :max
-        t.column :percent_fee
-        t.column :static_fee
       end
     end
 
@@ -66,20 +63,18 @@ ActiveAdmin.register Commission do
       f.input :finish, :as => :datepicker
     end
     f.inputs do
-      f.has_many :commission_sections do |csf|
-        csf.semantic_errors
-        csf.input :agent, :collection => Agent.rmap, :input_html => { :class => 'chosen' }
-        csf.input :terminal_profile, :collection => TerminalProfile.rmap, :input_html => { :class => 'chosen' }
-        csf.input :payment_type, :as => :select, :input_html => { :class => 'chosen' }, 
+      f.has_many :limit_sections do |lsf|
+        lsf.semantic_errors
+        lsf.input :agent, :collection => Agent.rmap, :input_html => { :class => 'chosen' }
+        lsf.input :terminal_profile, :collection => TerminalProfile.rmap, :input_html => { :class => 'chosen' }
+        lsf.input :payment_type, :as => :select, :input_html => { :class => 'chosen' }, 
           :collection => I18n.t('smartkiosk.payment_types').invert
-        csf.input :min
-        csf.input :max
-        csf.input :percent_fee
-        csf.input :static_fee
-        unless csf.object.new_record?
-          csf.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
+        lsf.input :min
+        lsf.input :max
+        unless lsf.object.new_record?
+          lsf.input :_destroy, :as => :boolean, :label => I18n.t('active_admin.delete')
         end
-        csf.form_buffers.last
+        lsf.form_buffers.last
       end
     end
     f.actions

@@ -1,4 +1,4 @@
-ActiveAdmin.register SystemReceiptTemplate do
+SlashAdmin.register SystemReceiptTemplate do
   config.batch_actions = false
   
   actions :index, :show, :edit, :update

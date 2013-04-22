@@ -1,4 +1,4 @@
-ActiveAdmin.register Version do
+SlashAdmin.register Version do
   config.batch_actions = false
   actions :index, :show
 

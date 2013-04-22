@@ -1,4 +1,4 @@
-ActiveAdmin.register ProviderGroup do
+SlashAdmin.register ProviderGroup do
   menu :parent => I18n.t('activerecord.models.provider.other'),
        :if     => proc { can? :index, ProviderGroup },
        :priority => 2

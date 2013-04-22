@@ -1,4 +1,4 @@
-ActiveAdmin.register ProviderReceiptTemplate do
+SlashAdmin.register ProviderReceiptTemplate do
 
   menu :parent => I18n.t('activerecord.models.provider.other'), 
        :if     => proc { can? :index, Gateway }

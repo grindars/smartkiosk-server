@@ -1,4 +1,4 @@
-ActiveAdmin.register Revision do
+SlashAdmin.register Revision do
   actions :index, :show, :new, :create, :destroy
 
   menu :parent => I18n.t('activerecord.models.gateway.other'),

@@ -1,3 +1,6 @@
+require 'dav4rack/build_resource'
+
+=begin
 require 'active_admin/cancan_integration'
 require 'active_admin/views/pages/base_fix'
 require 'active_admin/form_builder_fix'
@@ -8,7 +11,6 @@ require 'active_admin/inputs/filter_multiple_select_input'
 require 'active_admin/inputs/filter_date_range_input_fix'
 require 'paper_trail/version_fix'
 require 'formtastic/inputs/selectable_check_boxes'
-require 'dav4rack/build_resource'
 require 'kaminari/array_extension_fix'
 
 ActiveAdmin.setup do |config|
@@ -31,3 +33,4 @@ ActiveAdmin.setup do |config|
 
   config.register_javascript 'http://api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU'
 end
+=end

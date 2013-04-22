@@ -1,4 +1,4 @@
-ActiveAdmin.register Payment do
+SlashAdmin.register Payment do
   actions :index, :show, :new, :create
 
   controller do

@@ -1,4 +1,4 @@
-ActiveAdmin.register Report do
+SlashAdmin.register Report do
   actions :new, :create, :index, :show, :destroy
 
   menu :parent   => I18n.t('activerecord.models.report.other'),

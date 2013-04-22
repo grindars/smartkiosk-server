@@ -1,4 +1,4 @@
-ActiveAdmin.register Rebate do
+SlashAdmin.register Rebate do
   menu :parent => I18n.t('activerecord.models.gateway.other'), 
        :if     => proc { can? :index, Rebate }
 
